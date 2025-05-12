@@ -7,27 +7,19 @@ repos:
         types: [terraform]
         files: \.tf$
 
-
-
-      #- id: terraform_validate
+      - id: terraform_validate
        # language: system  # ← Nécessaire pour Windows
 
-     # - id: terraform_trivy
-        #name: Terraform validate with trivy
-        #description: >-
-        #  Static analysis of Terraform templates to spot potential security issues.
-       # require_serial: true
-       # entry: hooks/terraform_trivy.sh
-        #files: \.(tf|tofu|tfvars)$
+      - id: terraform_trivy
        # language: system  # ← Nécessaire pour Windows
 
-      #- id: terraform_docs
-       # language: system  # ← Nécessaire pour Windows
-        #args:
-        #- --config-file=README.md  # Format simplifié
-        #- --output-file=README.md
-        #- --output-mode=inject
-        #- --recursive
+      - id: terraform_docs
+        # language: system  # ← Nécessaire pour Windows
+        args:
+        - --config-file=README.md  # Format simplifié
+        - --output-file=README.md
+        - --output-mode=inject
+        - --recursive
 
 
 
