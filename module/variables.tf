@@ -3,6 +3,7 @@ variable "name" {
   type        = string
 }
 
+
 variable "ami_id" {
   description = "ID of the AMI to use for the EC2 instance"
   type        = string
@@ -24,6 +25,9 @@ variable "vpc_id" {
   description = "ID of the VPC where the instance will be created"
   type        = string
 }
+
+
+# Ajouter les autres variables nécessaires...
 
 variable "subnet_id" {
   description = "ID of the subnet where the instance will be created"

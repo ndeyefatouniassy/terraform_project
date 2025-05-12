@@ -5,7 +5,7 @@ resource "aws_instance" "this" {
   key_name               = var.key_name
   vpc_security_group_ids = var.security_group_ids
   subnet_id              = var.subnet_id
-  
+
   associate_public_ip_address = var.associate_public_ip
 
   root_block_device {
@@ -24,7 +24,7 @@ resource "aws_instance" "this" {
 
   metadata_options {
     http_endpoint               = "enabled"
-    http_tokens                 = "required"  # IMDSv2 - security best practice
+    http_tokens                 = "required" # IMDSv2 - security best practice
     http_put_response_hop_limit = 1
   }
 
@@ -64,6 +64,8 @@ resource "aws_security_group" "launch-wizard-1" {
     var.tags
   )
 }
+
+
 
 # Create Elastic IP if specified
 resource "aws_eip" "this" {

@@ -1,0 +1,40 @@
+repos:
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.99.0
+    hooks:
+      - id: terraform_fmt
+        #language: system  # ← Nécessaire pour Windows
+        types: [terraform]
+        files: \.tf$
+
+
+
+      #- id: terraform_validate
+       # language: system  # ← Nécessaire pour Windows
+
+     # - id: terraform_trivy
+        #name: Terraform validate with trivy
+        #description: >-
+        #  Static analysis of Terraform templates to spot potential security issues.
+       # require_serial: true
+       # entry: hooks/terraform_trivy.sh
+        #files: \.(tf|tofu|tfvars)$
+       # language: system  # ← Nécessaire pour Windows
+
+      #- id: terraform_docs
+       # language: system  # ← Nécessaire pour Windows
+        #args:
+        #- --config-file=README.md  # Format simplifié
+        #- --output-file=README.md
+        #- --output-mode=inject
+        #- --recursive
+
+
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-yaml
